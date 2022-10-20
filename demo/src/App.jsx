@@ -9,7 +9,6 @@ import Building from './components/Building';
 function App() {
   const [isShown, setIsShown] = useState(false);
   let navigate = useNavigate();
-
   const handleClick = (id) => {
     console.log(id)
     setIsShown(true);

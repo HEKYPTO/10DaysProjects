@@ -10,7 +10,6 @@ export default function Building(props) {
     var name = props.name;
     // const open = props.open;
     // const setOpen = props.setOpen;
-
     const style = {
         position: 'absolute',
         top: '50%',
@@ -22,13 +21,6 @@ export default function Building(props) {
         boxShadow: 24,
         p: 4,
     };
-    // const changeUserState = () => {
-    //     setUserState((state) => !state);
-    //   };
-    // const [open, setOpen] = React.useState(true);
-
-    // const handleClose = () => setOpen(false);
-
     return (
         <div>
             <Modal
