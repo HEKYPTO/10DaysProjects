@@ -1,41 +1,24 @@
 import * as React from 'react';
 import Map, { Marker, NavigationControl, Layer, Source } from 'react-map-gl';
 import maplibregl from 'maplibre-gl';
-import {useState, useCallback} from 'react';
+import { useState, useCallback } from 'react';
+import './App.css'
+import Building from './components/Building';
 
 function App() {
+  const [isShown, setIsShown] = useState(false);
 
-  const handleClick = () => {
-    console.log('Easy pz')
+  const handleClick = (id) => {
+    console.log(id)
+    setIsShown(true);
   }
-  const geojson = {
-    type: 'FeatureCollection',
-    features: [
-      {type: 'Feature', geometry: {type: 'Point', coordinates: [100.53311061102855, 13.736983807465586]}}
-    ]
-  };
-  const layerStyle = {
-    id: 'point',
-    type: 'circle',
-    paint: {
-      'circle-radius': 100,
-      'circle-color': '#007cbf'
-    }
-  };
 
-  const onClick = useCallback(event => {
-    const feature = event.features && event.features[0];
-    console.log(feature)
-      window.alert('Clicked layer test'); // eslint-disable-line no-alert
-  }, []);
-  // 100.531233507,13.7341619786,100.5350130035,13.7379234343
   var sw = new maplibregl.LngLat(100.531233507, 13.7341619786);
   var ne = new maplibregl.LngLat(100.5350130035, 13.7379234343);
   var llb = new maplibregl.LngLatBounds(sw, ne);
   return (
     <div>
       <Map mapLib={maplibregl}
-        // onClick={onClick}
         initialViewState={{
           longitude: 100.53311061102855,
           latitude: 13.736983807465586,
@@ -46,13 +29,25 @@ function App() {
         }}
         maxBounds={llb}
         style={{ width: "100%", height: "100vh" }}
-        mapStyle="https://api.maptiler.com/maps/streets/style.json?key=25qBairJjw1gb4U7DB8r"
+        mapStyle="https://api.maptiler.com/maps/7ea20431-de61-4eb1-a99e-626e0ec563a6/style.json?key=25qBairJjw1gb4U7DB8r"
       >
         <NavigationControl />
-        <Marker longitude={100.53311061102855} latitude={13.736983807465586} onClick={handleClick} />
-        <Source id="my-data" type="geojson" data={geojson}>
-        <Layer {...layerStyle}  onClick={handleClick}/>
-      </Source>
+        <Marker longitude={100.53260118699939} latitude={13.736570093644485} onClick={() => { handleClick('ENG1') }} anchor="bottom" scale='0'>
+          <h1>ENG1</h1>
+          {isShown && <Building setUserState={isShown}/>}
+        </Marker>
+        <Marker longitude={100.53338030663161} latitude={13.736455216088158} onClick={() => { handleClick('ENG2') }} anchor="bottom" scale='0'>
+          <h1>ENG2</h1>
+        </Marker>
+        <Marker longitude={100.53311061102855} latitude={13.736983807465586} onClick={() => { handleClick('ENG3') }} anchor="bottom" scale='0'>
+          <h1>ENG3</h1>
+        </Marker>
+        <Marker longitude={100.53385835924983} latitude={13.73594850574619} onClick={() => { handleClick('ENG4') }} anchor="bottom" scale='0'>
+          <h1>ENG4</h1>
+        </Marker>
+        <Marker longitude={100.53397067699699} latitude={13.736398565496355} onClick={() => { handleClick('ENG100') }} anchor="bottom" scale='0'>
+          <h1>ENG100</h1>
+        </Marker>
       </Map>
 
     </div>);
