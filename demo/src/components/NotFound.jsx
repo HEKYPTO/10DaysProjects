@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function NotFound() {
   return (
     <Link to='/'>
-    <button>NotFound</button>
+      <button>NotFound</button>
     </Link>
   )
 }
