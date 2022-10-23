@@ -1,17 +1,13 @@
 import React from 'react'
 import Select from 'react-select'
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useState } from 'react';
-
-
+import './Search.css'
 
 function Search() {
     let navigate = useNavigate()
     const handleChange = (value) => {
         if (value !== null) {
-            console.log(value['alt'])
-            let url = '/' + value['alt']
+            let url = '/building/' + value['alt']
             navigate(url);
         }
     }
@@ -24,7 +20,9 @@ function Search() {
     ];
 
     return (
-            <Select options={buildings} isClearable={true} value={null} onChange={(inputValue) => { handleChange(inputValue)}} />
+        <div className='react-select-wrapper'>
+            <Select className='react-select-container' options={buildings} isClearable={true} value={null} onChange={(inputValue) => { handleChange(inputValue)}} />
+        </div>
     );
 }
 
