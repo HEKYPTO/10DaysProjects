@@ -4,7 +4,6 @@ import MapDisplay from './components/MapDisplay'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Setting from './components/Setting';
 
-
 function App() {
     
     return (
