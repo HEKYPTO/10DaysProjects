@@ -2,9 +2,9 @@
     z-index: 1000;
     position: fixed;
     margin-top: 20px;
-    margin-left: 10px;
-    width: 10vw;
-    height: 10vw;
+    margin-left: 4vw;
+    min-width: 38px;
+    min-height: 38px;
     
 }
 .setting-button{
@@ -25,3 +25,9 @@
     left: 50%;
     translate: -50% -50%;
 }
+
+@media (orientation: landscape) {
+    .setting-wrapper {
+        margin-left: 10vw;
+    }
+  }
