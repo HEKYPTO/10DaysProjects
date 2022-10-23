@@ -1,0 +1,18 @@
+.modal-dialog {
+    transition: height 0.5s ease-in-out !important;
+ }
+
+ div.modal-dialog {
+    margin: 0;
+    padding: 0;
+    height: 50vh;
+    top: auto;
+    bottom: 0;
+    position: fixed;
+    min-width: 100vw;
+}
+
+.modal-extend  {
+    height: 80vh !important;
+}
+
