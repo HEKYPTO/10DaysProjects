@@ -3,8 +3,10 @@
     position: fixed;
     margin-top: 20px;
     margin-left: 4vw;
+    margin-right:4vw;
     min-width: 38px;
     min-height: 38px;
+    /* transform: translate(0, 25px); */
     
 }
 .setting-button{
@@ -31,3 +33,30 @@
         margin-left: 10vw;
     }
   }
+
+.feedback-button{
+    color: #000000;
+    background-color: #FF7070;
+    border-color: black;
+}
+
+.languages-button{
+    color: #000000;
+    background-color: #FF7070;
+    border-color: black;
+
+}
+
+.save-button{
+    color: #000000;
+    background-color: #FF7070;
+    border-color: black;
+
+}
+
+.close-button{
+    color: #000000;
+    background-color: #FF7070;
+    border-color: black;
+
+}

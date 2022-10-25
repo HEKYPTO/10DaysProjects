@@ -1,9 +1,10 @@
 import * as React from 'react';
-import Map, { Marker, NavigationControl, Layer, Source } from 'react-map-gl';
+import Map, { NavigationControl} from 'react-map-gl';
 import maplibregl from 'maplibre-gl';
 import MapMarker from './MapMarker';
 import './MapDisplay.css'
 import "maplibre-gl/dist/maplibre-gl.css";
+import { MapProvider } from 'react-map-gl';
 
 function MapDisplay() {
   var sw = new maplibregl.LngLat(100.531233507, 13.7341619786);
@@ -19,7 +20,7 @@ function MapDisplay() {
   ]
 
   return (
-    <div>
+      <MapProvider>
       <Map mapLib={maplibregl}
         initialViewState={{
           longitude: 100.53311061102855,
@@ -29,18 +30,19 @@ function MapDisplay() {
           bearing: 190,
           antialias: true,
         }}
+        doubleClickZoom={false}
         maxZoom='20'
         maxBounds={llb}
-        style={{ width: "100%", height: "100vh" }}
+        style={{width: '100vw', height: '100%'}}
         mapStyle="https://api.maptiler.com/maps/4a03b449-9034-4621-a191-9d748a7a96f1/style.json?key=25qBairJjw1gb4U7DB8r"
       >
         <NavigationControl />
         {markers.map(i => {
-          return <MapMarker data={i} />
+          return <MapMarker key={i.name} data={i} />
         })}
       </Map>
-
-    </div>);
+      </MapProvider>
+);
 }
 
 export default MapDisplay

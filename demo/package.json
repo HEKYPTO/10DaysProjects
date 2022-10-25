@@ -9,9 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
     "bootstrap": "^5.2.2",
+    "firebase": "^9.12.1",
     "framer-motion": "^7.6.1",
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
     "maplibre-gl": "^2.4.0",
@@ -19,7 +18,7 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
-    "react-lottie": "^1.2.3",
+    "react-lottie-player": "^1.5.0",
     "react-map-gl": "^7.0.19",
     "react-modal-sheet": "^1.8.1",
     "react-router-dom": "^6.4.2",

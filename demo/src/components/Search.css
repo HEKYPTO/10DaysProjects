@@ -7,7 +7,8 @@
     width: 100vw;
     display: flex;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
+    /* transform: translate(0, 25px); */
 }

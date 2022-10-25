@@ -1,43 +1,25 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
-import Lottie from "react-lottie";
-import Search from './components/Search'
-import MapDisplay from './components/MapDisplay'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Setting from './components/Setting';
+import React, { Suspense } from 'react'
+import Lottie from "react-lottie-player";
 
-import animationData from './components/loading.json'
-
+import lottieJson from './components/loading.json'
+import Header from './components/Header';
+const MapApp = React.lazy(() => import('./MapApp'));
 
 
 
 
 function App() {
-
-    const [isLoading, setLoading] = useState(true)
-    const defaultOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: animationData,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice'
-        }
-    };
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false)
-        }, 3000);
-    }, []);
-
     return (
         <>
-            <Search />
-            <Setting />
-            {!isLoading ? <MapDisplay /> : 
-            <Lottie options={defaultOptions}
-                height={400}
-                width={400} />}
-
+            <Header />
+            <Suspense fallback={<Lottie
+                animationData={lottieJson}
+                loop
+                play
+                style={{ height: '100%', position: 'absolute', width: '100%' }}
+            />}>
+                <MapApp />
+            </Suspense>
         </>
     )
 }
