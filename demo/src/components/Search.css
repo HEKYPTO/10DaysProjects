@@ -1,0 +1,14 @@
+.react-select-container {
+    width: 70vw;
+    padding-top: 20px;
+}
+
+.react-select-wrapper {
+    width: 100vw;
+    display: flex;
+    z-index: 2;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    /* transform: translate(0, 25px); */
+}
