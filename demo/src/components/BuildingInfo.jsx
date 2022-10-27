@@ -3,11 +3,25 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect } from 'react';
 import './Buildinginfo.css';
+import axios from 'axios';
+import BuildingCard from './BuildingCard';
 
+const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
 function BuildingInfo() {
+    const [info, setInfo] = useState(null);
     const [isOpen, setOpen] = useState(false);
-    const [image,setImage] = useState(true)
-    
+    const [image, setImage] = useState(true);
+    const [expand, setExpand] = useState(true);
+
+    useEffect(() => {
+        var url = 'https://api.jjus.dev/building/' + name
+        axios.get(url).then(function (response) {
+            setInfo(response)
+            console.log(response.data);
+            setOpen(true)
+        })
+    }, [])
+
     const handleImage = (index) => {
         if (index == 0) {
             setImage(false);
@@ -24,9 +38,8 @@ function BuildingInfo() {
     let Id = useParams();
     var name = Id.Id
     let navigate = useNavigate();
-    useEffect(() => {
-        setOpen(true)
-    }, [])
+
+    if (!info) return null;
 
     return (
         <>
@@ -45,11 +58,16 @@ function BuildingInfo() {
                     </Sheet.Header>
 
                     <Sheet.Content>
-                        <h1>{name}</h1>
-                        {image ?  <></>:
+                        {image ? <></> :
                             <div className='building-image-box-inline'>
                                 <img src='https://via.placeholder.com/300x150' />
                             </div>}
+                        <div className='building-data'>
+                            <BuildingCard name='Department' info={info.data['Department']}/>
+                            <BuildingCard name='Direction' info={info.data['Direction']}/>
+                            <BuildingCard name='Essential' info={info.data['Essential']}/>
+                            <BuildingCard name='Facility' info={info.data['Facility']}/>
+                        </div>
                     </Sheet.Content>
                 </Sheet.Container>
 

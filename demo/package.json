@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
+    "axios": "^1.1.3",
+    "axios-cache-adapter": "^2.7.3",
     "bootstrap": "^5.2.2",
-    "firebase": "^9.12.1",
     "framer-motion": "^7.6.1",
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
     "maplibre-gl": "^2.4.0",
@@ -21,6 +26,7 @@
     "react-lottie-player": "^1.5.0",
     "react-map-gl": "^7.0.19",
     "react-modal-sheet": "^1.8.1",
+    "react-query": "^3.39.2",
     "react-router-dom": "^6.4.2",
     "react-search-autocomplete": "^8.0.0",
     "react-select": "^5.5.4"
