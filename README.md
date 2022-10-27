@@ -3,7 +3,7 @@
 
 ![alt text](https://github.com/HEKYPTO/Project10Days/blob/temp/demo/src/assets/Logo.png?raw=true)
 
-This project purpose to assist first time visitor at Chulalongkorn University Engineering Faultty. With interactive map and information within each building. Visit [This Liknk!](https://map.imjustin.dev/) for the project currently on hosting. 
+This project purpose to assist first time visitor at Chulalongkorn University Engineering Faultty. With interactive map and information within each building. Visit [This Link!](https://map.imjustin.dev/) for the project currently on hosting. 
 
 ## Usage
 Install Package from the published repositories redidirect to project directory.
