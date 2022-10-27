@@ -15,8 +15,8 @@ pnpm install vite
 pnpm run dev
 ```
 ## Stack
-- Front End: **React Native**
-- Back End: **Google Firebase**
+- Front End: **[React Native](https://reactnative.dev)**
+- Back End: **[Google Firebase](https://firebase.google.com/)**
   
 ## Tools
 <img align="left" alt="Visual Studio Code" width="26px" src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" />
