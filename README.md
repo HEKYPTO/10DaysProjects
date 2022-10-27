@@ -1,1 +1,4 @@
-# 10(now 7)DaysProjects
+# 10 Days Project for Thinc. Club
+CU Intania Map 
+
+![alt text]()
